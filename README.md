@@ -4,7 +4,7 @@ Data Insight for supply and use of crude oil, natural gas liquids, and feedstock
 1.Download zip file
 2.Unzip the file
 3. Go to the directory that contains setup.py 
-4. Run pip install to the path where the setup.py directory exists (pip install --/--/--/Petroineos/Petroineos)
+4. Run pip install to the path where the setup.py directory exists (pip install --/--/--/Petroineos-main/Petroineos-main)
 5. use the python console or IDE 
 6. from Petronius import run
 7. Now can use the different functions
