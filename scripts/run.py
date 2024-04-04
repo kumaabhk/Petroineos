@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 
+
 def archive(INPUT_DIR, ARCHIVE_DIR,filename):
     input_file_path = f"{INPUT_DIR}/{filename}"
     matching_files = glob.glob(input_file_path)
@@ -202,9 +203,19 @@ def transform(df, missing_columns, additional_columns,OUTPUT_DIR):
 
 if __name__ == '__main__':
     # Usage
-    INPUT_DIR = "../data/input/"
-    OUTPUT_DIR = "../data/output/"
-    ARCHIVE_DIR = "../data/archive/"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(script_dir)
+    INPUT_FOLDER = 'data/input/'
+    OUTPUT_FOLDER = 'data/output/'
+    ARCHIVE_DIR = 'data/archive/'
+
+    input_folder_path = os.path.join(parent_dir, INPUT_FOLDER)
+    output_folder_path = os.path.join(parent_dir, OUTPUT_FOLDER)
+    archive_folder_path = os.path.join(parent_dir, ARCHIVE_DIR)
+
+    INPUT_DIR = input_folder_path
+    OUTPUT_DIR = output_folder_path
+    ARCHIVE_DIR = archive_folder_path
     WEB_URL = 'https://www.gov.uk/government/statistics/oil-and-oil-products-section-3-energy-trends/'
     FILE_NAME = "Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 - quarterly)"
     LAST_MODIFIEDDATE_FILE = os.path.join(INPUT_DIR, 'last_modified_date.txt')
