@@ -8,16 +8,30 @@ Data Insight for supply and use of crude oil, natural gas liquids, and feedstock
 5. use the python console or IDE 
 6. from Petronius import run
 7. Now can use the different functions
- Run.download_new_file(WEB_URL, INPUT_DIR, FILE_NAME, LAST_MODIFIEDDATE_FILE)
- where
- WEB_URL = 'https://www.gov.uk/government/statistics/oil-and-oil-products-section-3-energy-trends/'
-FILE_NAME = "Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 - quarterly)"
-LAST_MODIFIEDDATE_FILE = os.path.join(INPUT_DIR, 'last_modified_date.txt')
-parent_dir = os.path.dirname(script_dir)
-INPUT_FOLDER = 'data/input/'
-input_folder_path = os.path.join(parent_dir, INPUT_FOLDER)
+parameters--
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(script_dir)
+    INPUT_FOLDER = 'data/input/'
+    OUTPUT_FOLDER = 'data/output/'
+    ARCHIVE_DIR = 'data/archive/'
 
-#INPUT_DIR- Currently Input directory has been kept at folder level for the sample work, it can be modifed to pass through parameter or configured.
+    input_folder_path = os.path.join(parent_dir, INPUT_FOLDER)
+    output_folder_path = os.path.join(parent_dir, OUTPUT_FOLDER)
+    archive_folder_path = os.path.join(parent_dir, ARCHIVE_DIR)
+
+    INPUT_DIR = input_folder_path
+    OUTPUT_DIR = output_folder_path
+    ARCHIVE_DIR = archive_folder_path
+    WEB_URL = 'https://www.gov.uk/government/statistics/oil-and-oil-products-section-3-energy-trends/'
+    FILE_NAME = "Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 - quarterly)"
+    LAST_MODIFIEDDATE_FILE = os.path.join(INPUT_DIR, 'last_modified_date.txt')
+Functions--
+    run.download_new_file(WEB_URL, INPUT_DIR, FILE_NAME, LAST_MODIFIEDDATE_FILE)
+    run.file_df,missing_columns, additional_columns,filename = read_file(INPUT_DIR)
+    run.transform(file_df,missing_columns,additional_columns,OUTPUT_DIR)
+    run.archive(INPUT_DIR,ARCHIVE_DIR,filename)
+
+#INPUT_DIR, OUTPUT_DIR, ARCHIVE_DIR- Currently directories has been kept at folder level for the sample work, it can be modifed to pass through parameter or configured.
 
 ALTERNATE WAY TO EXECUTE FULL SCRIPT----
 
