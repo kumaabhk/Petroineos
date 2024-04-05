@@ -33,7 +33,8 @@ Functions--
 
 #INPUT_DIR, OUTPUT_DIR, ARCHIVE_DIR- Currently directories has been kept at folder level for the sample work, it can be modifed to pass through parameter or configured.
 
-ALTERNATE WAY TO EXECUTE FULL SCRIPT----
+# There has been some issue pushing the code to Git initially as my Git account had some settings issue. In the event if it doesnt work with package please use the Alternate WAY to execute the code.
+**ALTERNATE WAY TO EXECUTE FULL SCRIPT-**---
 
 Petroineos/scripts/run.py is the executable
 to execute the script 
